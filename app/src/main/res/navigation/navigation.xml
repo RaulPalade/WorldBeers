@@ -19,5 +19,9 @@
         android:id="@+id/beerDetail"
         android:name="com.raulp.worldbeers.ui.beerdetail.BeerDetailFragment"
         android:label="fragment_beer_detail"
-        tools:layout="@layout/fragment_beer_detail" />
+        tools:layout="@layout/fragment_beer_detail">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
 </navigation>

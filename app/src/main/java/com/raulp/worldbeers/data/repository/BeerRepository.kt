@@ -2,7 +2,7 @@ package com.raulp.worldbeers.data.repository
 
 import com.raulp.worldbeers.data.datasource.WorldBeerDataSource
 import com.raulp.worldbeers.data.models.BeerResponse
-import com.raulp.worldbeers.data.models.ResponseResult
+import com.raulp.worldbeers.data.models.ResponseStatus
 import retrofit2.Response
 
 /**
@@ -13,12 +13,12 @@ import retrofit2.Response
 
 class BeerRepository(private val worldBeerDataSource: WorldBeerDataSource) : IBeerRepository {
 
-    override suspend fun getAllBeers(): ResponseResult<Response<List<BeerResponse>>> {
+    override suspend fun getAllBeers(): ResponseStatus<Response<List<BeerResponse>>> {
         val response = worldBeerDataSource.getAllBeers()
         return if (response.isSuccessful) {
-            ResponseResult.Success(response)
+            ResponseStatus.Success(response)
         } else {
-            ResponseResult.Failure(response.message())
+            ResponseStatus.Failure(response.message())
         }
     }
 }

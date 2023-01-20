@@ -1,7 +1,7 @@
 package com.raulp.worldbeers.data.repository
 
 import com.raulp.worldbeers.data.models.BeerResponse
-import com.raulp.worldbeers.data.models.ResponseResult
+import com.raulp.worldbeers.data.models.ResponseStatus
 import retrofit2.Response
 
 /**
@@ -11,5 +11,5 @@ import retrofit2.Response
  */
 
 interface IBeerRepository {
-    suspend fun getAllBeers(): ResponseResult<Response<List<BeerResponse>>>
+    suspend fun getAllBeers(): ResponseStatus<Response<List<BeerResponse>>>
 }
