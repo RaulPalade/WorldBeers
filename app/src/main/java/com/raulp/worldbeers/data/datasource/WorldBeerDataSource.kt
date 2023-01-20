@@ -1,6 +1,6 @@
 package com.raulp.worldbeers.data.datasource
 
-import com.raulp.worldbeers.data.network.NetworkBeerContainer
+import com.raulp.worldbeers.data.models.BeerResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -12,5 +12,5 @@ import retrofit2.http.GET
 
 interface WorldBeerDataSource {
     @GET("v2/beers")
-    suspend fun getAllBeers(): Response<List<NetworkBeerContainer>>
+    suspend fun getAllBeers(): Response<List<BeerResponse>>
 }

@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/beerListFragment">
+    app:startDestination="@id/homeFragment">
 
 
     <fragment
-        android:id="@+id/beerListFragment"
-        android:name="com.raulp.worldbeers.ui.home.BeerListFragment"
+        android:id="@+id/homeFragment"
+        android:name="com.raulp.worldbeers.ui.home.HomeFragment"
         android:label="BeerListFragment"
-        tools:layout="@layout/fragment_beer_list">
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_beerListFragment_to_beerDetail"
             app:destination="@id/beerDetail" />
     </fragment>
     <fragment
         android:id="@+id/beerDetail"
-        android:name="com.raulp.worldbeers.BeerDetail"
+        android:name="com.raulp.worldbeers.ui.beerdetail.BeerDetailFragment"
         android:label="fragment_beer_detail"
         tools:layout="@layout/fragment_beer_detail" />
 </navigation>
