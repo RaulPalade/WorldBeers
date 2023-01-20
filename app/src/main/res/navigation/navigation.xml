@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/beerListFragment">
+
+
+    <fragment
+        android:id="@+id/beerListFragment"
+        android:name="com.raulp.worldbeers.ui.home.BeerListFragment"
+        android:label="BeerListFragment"
+        tools:layout="@layout/fragment_beer_list">
+        <action
+            android:id="@+id/action_beerListFragment_to_beerDetail"
+            app:destination="@id/beerDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/beerDetail"
+        android:name="com.raulp.worldbeers.BeerDetail"
+        android:label="fragment_beer_detail"
+        tools:layout="@layout/fragment_beer_detail" />
+</navigation>
