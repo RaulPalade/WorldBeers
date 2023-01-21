@@ -25,7 +25,7 @@ data class BeerResponse(
     val firstBrewed: String,
     @SerializedName("food_pairing")
     val foodPairing: List<String>,
-    @SerializedName("brewer_tips")
+    @SerializedName("brewers_tips")
     val brewerTips: String
 )
 

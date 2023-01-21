@@ -36,10 +36,10 @@ class HomeFragment : Fragment() {
         binding.homeViewModel = viewModel
 
         val adapter = BeerListAdapter {
-            val action = HomeFragmentDirections.actionBeerListFragmentToBeerDetail(it.id)
+            val action = HomeFragmentDirections.actionBeerListFragmentToBeerDetail(it)
             this.findNavController().navigate(action)
         }
-        binding.recyclerView.adapter = adapter
+        binding.homeRecyclerView.adapter = adapter
 
         viewModel.getBeerList()
 
@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
                 }
             }
         }
-        binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
+        binding.homeRecyclerView.layoutManager = LinearLayoutManager(this.context)
     }
 
     private fun setupViewModel() {
