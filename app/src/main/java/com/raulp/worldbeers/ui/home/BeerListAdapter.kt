@@ -36,7 +36,6 @@ class BeerListAdapter(private val onBeerClicked: (Beer) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(beer: Beer) {
-            println(beer)
             binding.apply {
                 binding.root.context.let {
                     Glide.with(it)

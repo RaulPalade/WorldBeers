@@ -50,6 +50,17 @@ class HomeViewModel(private val beerRepository: BeerRepository) : ViewModel() {
         }
     }
 
+    fun filterBeers(parameter: String) {
+        if (parameter.isNotEmpty()) {
+            val filteredBeers =
+                beerList.filter { beer ->
+                    beer.name.contains(parameter, ignoreCase = true) ||
+                            beer.description.contains(parameter, ignoreCase = true)
+                }
+            _beers.postValue(ResponseStatus.Success(filteredBeers))
+        }
+    }
+
     override fun onCleared() {
         super.onCleared()
         job?.cancel()

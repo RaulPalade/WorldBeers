@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,7 +30,8 @@ class BeerDetailFragment : Fragment() {
         val beer = args.beer
         setInfo(beer)
 
-        println(beer.foodPairing)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(true)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = beer.name
 
         val adapter = FoodPairingAdapter()
         binding.foodPairingRecyclerView.adapter = adapter
